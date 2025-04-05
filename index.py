@@ -51,8 +51,8 @@ from google.cloud import texttospeech
 from pydub import AudioSegment
 import simpleaudio as sa
 
-# 🔐 Set your service account path
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = r"C:\Users\RENUKA\Desktop\ARIANTECH\callbot\service-account.json"
+# Set relative path to service-account.json
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.path.join(os.path.dirname(__file__), "service-account.json")
 
 app = Flask(__name__)
 recognizer = sr.Recognizer()
